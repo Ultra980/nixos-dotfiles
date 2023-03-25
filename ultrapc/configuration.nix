@@ -2,14 +2,15 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 let
-  nix-software-center = import (pkgs.fetchFromGitHub {
-    owner = "vlinkz";
-    repo = "nix-software-center";
-    rev = "0.1.1";
-    sha256 = "0frigabszyfkphfbsniaa1d546zm8a2gx0cqvk2fr2qfa71kd41n";
-  }) {};
+  # nix-software-center = import (pkgs.fetchFromGitHub {
+    # owner = "vlinkz";
+    # repo = "nix-software-center";
+    # rev = "0.1.1";
+    # sha256 = "0frigabszyfkphfbsniaa1d546zm8a2gx0cqvk2fr2qfa71kd41n";
+  # }) {};
+  nix-software-center = inputs.nix-software-center.packages.${pkgs.system}.nix-software-center;
 in
 {
   imports =
