@@ -7,7 +7,7 @@
     nixosConfigurations.ultrapc = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./configuration.nix
+        ./ultrapc/configuration.nix
       ];
     };
   };
