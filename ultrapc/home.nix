@@ -40,7 +40,7 @@ in {
         obsidian
         gnome-obfuscate
         microsoft-edge
-        doom-emacs
+        (lib.hiPrio doom-emacs)
         ripgrep
         w3m
         github-cli
