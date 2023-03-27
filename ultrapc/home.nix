@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: 
+{ pkgs, inputs, lib, ... }: 
 let
   nix-software-center = inputs.nix-software-center.packages.${pkgs.system}.nix-software-center;
   doom-emacs = inputs.nix-doom-emacs.packages.${pkgs.system}.default;
@@ -22,7 +22,7 @@ in {
         starship
         atuin
         clang
-        gcc
+        (lib.hiPrio gcc)
         exa
         gnumake
         plasma-browser-integration
