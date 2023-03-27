@@ -4,16 +4,9 @@
 
 { config, pkgs, lib, inputs, ... }:
 let
-  # nix-software-center = import (pkgs.fetchFromGitHub {
-    # owner = "vlinkz";
-    # repo = "nix-software-center";
-    # rev = "0.1.1";
-    # sha256 = "0frigabszyfkphfbsniaa1d546zm8a2gx0cqvk2fr2qfa71kd41n";
-  # }) {};
   nix-software-center = inputs.nix-software-center.packages.${pkgs.system}.nix-software-center;
   doom-emacs = inputs.nix-doom-emacs.packages.${pkgs.system}.default;
-in
-{
+in {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -99,7 +92,6 @@ in
     packages = with pkgs; [
       firefox
       kate
-    #  thunderbird
       distrobox
       fish
       nushell
@@ -112,7 +104,6 @@ in
       starship
       atuin
       clang
-      # clang++
       gcc
       exa
       gnumake
@@ -134,7 +125,6 @@ in
       microsoft-edge
       doom-emacs
       ripgrep
-      # microsoft-edge-dev # fails to build
     ];
     shell = pkgs.fish;
     hashedPassword = "$6$OBjnSQhhJgHsr5LE$jFtUz.2qv0l2viv86exXmfHWC0fDFXKD3rqH41NmqgkdoBrwY2rPkDBCPjdq7PSoeudYcQ0nXxJvh1N7EIUs90";

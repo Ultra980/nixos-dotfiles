@@ -19,10 +19,12 @@
         ./ultrapc/configuration.nix
       ];
     };
+    home-manager.extraSpecialArgs = { inherit inputs; };
     defaultPackage.x86_64-linux = home-manager.defaultPackage.x86_64-linux;
     homeConfigurations = {
       ultra = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        # specialArgs = { inherit inputs; };
         modules = [ ./ultrapc/home.nix ];
       }; 
     };
