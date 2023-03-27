@@ -203,8 +203,14 @@ in {
     # defaultNetwork.settings.dns_enabled = true;
   };
 
-  services.flatpak.enable = true;
-  services.packagekit.enable = true;
+  services = {
+    emacs = {
+      enable = true;
+      package = doom-emacs;
+    };
+    flatpak.enable = true;
+    packagekit.enable = true;
+  };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 
