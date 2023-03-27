@@ -43,6 +43,7 @@ in {
         doom-emacs
         ripgrep
         w3m
+        github-cli
       ];
     };
     programs = {
