@@ -36,13 +36,13 @@ in {
         steam
         packagekit
         armcord
-        packagekit
         rnote
         obsidian
         gnome-obfuscate
         microsoft-edge
         doom-emacs
         ripgrep
+        w3m
       ];
     };
     programs = {
