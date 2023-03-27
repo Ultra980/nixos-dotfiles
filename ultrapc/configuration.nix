@@ -11,6 +11,7 @@ let
     # sha256 = "0frigabszyfkphfbsniaa1d546zm8a2gx0cqvk2fr2qfa71kd41n";
   # }) {};
   nix-software-center = inputs.nix-software-center.packages.${pkgs.system}.nix-software-center;
+  doom-emacs = inputs.nix-doom-emacs.packages.${pkgs.system}.default;
 in
 {
   imports =
@@ -131,6 +132,8 @@ in
       obsidian
       gnome-obfuscate
       microsoft-edge
+      doom-emacs
+      ripgrep
       # microsoft-edge-dev # fails to build
     ];
     shell = pkgs.fish;
