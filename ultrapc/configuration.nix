@@ -155,6 +155,8 @@ in {
     fish
     libsForQt5.yakuake
     wacomtablet
+    git
+    starship
   ];
   programs.fish.enable = true;
  # programs.nushell.enable = true;
