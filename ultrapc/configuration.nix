@@ -161,6 +161,7 @@ in
     nix-software-center
     fish
     libsForQt5.yakuake
+    wacomtablet
   ];
   programs.fish.enable = true;
  # programs.nushell.enable = true;
@@ -212,18 +213,18 @@ in
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 
-#  NVIDIA config
-#  services.xserver.videoDrivers = [ "nvidia" ];
-#  hardware = {
-#    opengl = {
-#      enable = true;
-#      driSupport = true;
-#      driSupport32Bit = true;
-#    };
-#    nvidia = {
-#      package = config.boot.kernelPackages.nvidiaPackages.latest;
-#      modesetting.enable = true;
-#    };
-# };
+ # NVIDIA config
+# services.xserver.videoDrivers = [ "nvidia" ];
+hardware = {
+  opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+  # nvidia = {
+    # package = config.boot.kernelPackages.nvidiaPackages.latest;
+    # modesetting.enable = false;
+  # };
+};
 
 }
