@@ -1,7 +1,9 @@
 { pkgs, inputs, lib, ... }: 
 let
   nix-software-center = inputs.nix-software-center.packages.${pkgs.system}.nix-software-center;
-  doom-emacs = inputs.nix-doom-emacs.packages.${pkgs.system}.default;
+  doom-emacs = inputs.nix-doom-emacs.packages.${pkgs.system}.default.override {
+      doomPrivateDir = ./doom.d;
+  };
 in {
     imports = [ inputs.nix-doom-emacs.hmModule ];
     home = {
@@ -41,13 +43,14 @@ in {
         obsidian
         gnome-obfuscate
         microsoft-edge
-        (lib.hiPrio doom-emacs)
+        # doom-emacs
         ripgrep
         w3m
         github-cli
         mc
         zellij
         lsd
+        tealdeer
       ];
     };
     programs = {

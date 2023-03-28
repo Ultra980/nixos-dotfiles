@@ -89,6 +89,7 @@ in {
     isNormalUser = true;
     description = "Alex S.";
     extraGroups = [ "networkmanager" "wheel" ];
+    /*
     packages = with pkgs; [
       firefox
       kate
@@ -126,6 +127,7 @@ in {
       doom-emacs
       ripgrep
     ];
+    */
     shell = pkgs.fish;
     hashedPassword = "$6$OBjnSQhhJgHsr5LE$jFtUz.2qv0l2viv86exXmfHWC0fDFXKD3rqH41NmqgkdoBrwY2rPkDBCPjdq7PSoeudYcQ0nXxJvh1N7EIUs90";
   };
