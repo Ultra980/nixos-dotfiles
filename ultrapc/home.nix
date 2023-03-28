@@ -45,6 +45,7 @@ in {
         ripgrep
         w3m
         github-cli
+        mc
       ];
     };
     programs = {
