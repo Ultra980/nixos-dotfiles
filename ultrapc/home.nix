@@ -46,6 +46,8 @@ in {
         w3m
         github-cli
         mc
+        zellij
+        lsd
       ];
     };
     programs = {
