@@ -206,7 +206,9 @@ in {
   services = {
     emacs = {
       enable = true;
-      package = doom-emacs;
+      package = doom-emacs.override {
+        doomPrivateDir = ./doom.d;
+      };
     };
     flatpak.enable = true;
     packagekit.enable = true;
