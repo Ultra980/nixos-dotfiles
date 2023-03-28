@@ -3,6 +3,7 @@ let
   nix-software-center = inputs.nix-software-center.packages.${pkgs.system}.nix-software-center;
   doom-emacs = inputs.nix-doom-emacs.packages.${pkgs.system}.default;
 in {
+    imports = [ inputs.nix-doom-emacs.hmModule ];
     home = {
       username = "ultra";
       homeDirectory = "/home/ultra/";
@@ -48,6 +49,10 @@ in {
     };
     programs = {
       home-manager.enable = true;
+      doom-emacs = {
+        enable = true;
+        doomPrivateDir = ./doom.d;
+      };
       # fish.enable = true;
     };
 }
