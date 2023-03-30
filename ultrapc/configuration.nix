@@ -156,6 +156,7 @@ in {
     nix-software-center
     fish
     libsForQt5.yakuake
+    libsForQt5.discover
     wacomtablet
     git
     starship
