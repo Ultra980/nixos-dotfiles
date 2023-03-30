@@ -53,6 +53,16 @@ in {
         zellij
         lsd
         tealdeer
+        fd
+        broot
+        fzf
+        bottom
+        hyperfine
+        procs
+        httpie
+        curlie
+        xh
+
       ];
     };
     programs = {
