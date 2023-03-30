@@ -62,6 +62,8 @@ in {
         httpie
         curlie
         xh
+        du-dust
+        duf
 
       ];
     };
