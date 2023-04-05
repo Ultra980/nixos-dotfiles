@@ -200,10 +200,14 @@ in {
     Defaults pwfeedback
   '';
   
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-    # defaultNetwork.settings.dns_enabled = true;
+  virtualisation = {
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      # defaultNetwork.settings.dns_enabled = true;
+    };
+    waydroid.enable = true;
+    lxd.enable = true;
   };
 
   services = {
