@@ -226,6 +226,9 @@ in {
     };
     flatpak.enable = true;
     packagekit.enable = true;
+    xserver = {
+      wacom.enable = true;
+    };
   };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
