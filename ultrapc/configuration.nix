@@ -48,19 +48,6 @@ in {
     LC_TIME = "ro_RO.utf8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "ro";
-    xkbVariant = "";
-  };
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -131,10 +118,6 @@ in {
     shell = pkgs.fish;
     hashedPassword = "$6$OBjnSQhhJgHsr5LE$jFtUz.2qv0l2viv86exXmfHWC0fDFXKD3rqH41NmqgkdoBrwY2rPkDBCPjdq7PSoeudYcQ0nXxJvh1N7EIUs90";
   };
-
-  # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "ultra";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -217,6 +200,7 @@ in {
     };
   };
 
+
   services = {
     emacs = {
       enable = true;
@@ -228,6 +212,24 @@ in {
     packagekit.enable = true;
     xserver = {
       wacom.enable = true;
+
+      enable = true;
+
+      # Enable KDE Plasma 5 
+      displayManager = {
+
+        # Enable autologin 
+        autoLogin = { 
+          enable = true;
+          user = "ultra";
+        };
+        sddm.enable = true;
+      }
+      desktopManager.plasma5.enable = true;
+
+      # Keymap
+      layout = "ro";
+      xkbVariant = "";
     };
   };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
