@@ -83,45 +83,6 @@ in {
     isNormalUser = true;
     description = "Alex S.";
     extraGroups = [ "networkmanager" "wheel" ];
-    /*
-    packages = with pkgs; [
-      firefox
-      kate
-      distrobox
-      fish
-      nushell
-      git
-      bat
-      gnupg1
-      zoom-us
-      google-chrome
-      zoxide
-      starship
-      atuin
-      clang
-      gcc
-      exa
-      gnumake
-      plasma-browser-integration
-      libsForQt5.bismuth
-      whatsapp-for-linux
-      signal-desktop
-      nodejs
-      onlyoffice-bin
-      drawio
-      xclip
-      steam
-      packagekit
-      armcord
-      packagekit
-      rnote
-      obsidian
-      gnome-obfuscate
-      microsoft-edge
-      doom-emacs
-      ripgrep
-    ];
-    */
     shell = pkgs.fish;
     hashedPassword = "$6$OBjnSQhhJgHsr5LE$jFtUz.2qv0l2viv86exXmfHWC0fDFXKD3rqH41NmqgkdoBrwY2rPkDBCPjdq7PSoeudYcQ0nXxJvh1N7EIUs90";
   };
@@ -229,14 +190,14 @@ in {
       # Enable KDE Plasma 5 
       displayManager = {
 
+        # Enable autologin 
+        autoLogin = { 
+          enable = true;
+          user = "ultra";
+        };
+
         sddm = {
           enable = true;
-
-          # Enable autologin 
-          autoLogin = { 
-            enable = true;
-            user = "ultra";
-          };
         };
       };
       desktopManager.plasma5.enable = true;
