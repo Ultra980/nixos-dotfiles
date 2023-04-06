@@ -229,12 +229,15 @@ in {
       # Enable KDE Plasma 5 
       displayManager = {
 
-        # Enable autologin 
-        autoLogin = { 
+        sddm = {
           enable = true;
-          user = "ultra";
+
+          # Enable autologin 
+          autoLogin = { 
+            enable = true;
+            user = "ultra";
+          };
         };
-        sddm.enable = true;
       };
       desktopManager.plasma5.enable = true;
 
