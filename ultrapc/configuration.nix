@@ -224,7 +224,7 @@ in {
           user = "ultra";
         };
         sddm.enable = true;
-      }
+      };
       desktopManager.plasma5.enable = true;
 
       # Keymap
