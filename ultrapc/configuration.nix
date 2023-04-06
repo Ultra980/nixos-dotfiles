@@ -20,7 +20,7 @@ in {
       systemd-boot.enable = true;
       efi = {
         canTouchEfiVariables = true;
-        efiSysMountPoint = true;
+        efiSysMountPoint = "/boot/efi";
       };
     };
 
