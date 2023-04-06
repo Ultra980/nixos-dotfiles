@@ -111,6 +111,7 @@ in {
       wacomtablet
       git
       starship
+      plymouth
     ];
     variables = {
       NIX_AUTO_RUN = "!";
