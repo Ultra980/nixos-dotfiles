@@ -15,10 +15,17 @@ in {
 
   nix.settings.trusted-users = [ "root" "ultra" ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = true;
+      };
+    };
+
+    plymouth.enable = true;
+  };
 
   networking.hostName = "ultrapc"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -124,26 +131,30 @@ in {
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    neovim
-    neofetch
-    podman
-    distrobox
-    cargo
-    nushell
-    nerdfonts
-    steam-run
-    packagekit
-    nix-software-center
-    fish
-    libsForQt5.yakuake
-    libsForQt5.discover
-    wacomtablet
-    git
-    starship
-  ];
+  environment = {
+    systemPackages = with pkgs; [
+      wget
+      neovim
+      neofetch
+      podman
+      distrobox
+      cargo
+      nushell
+      nerdfonts
+      steam-run
+      packagekit
+      nix-software-center
+      fish
+      libsForQt5.yakuake
+      libsForQt5.discover
+      wacomtablet
+      git
+      starship
+    ];
+    variables = {
+      NIX_AUTO_RUN = "!";
+    };
+  };
   programs.fish.enable = true;
  # programs.nushell.enable = true;
  #  users.defaultUserShell = pkgs.zsh;
