@@ -208,6 +208,13 @@ in {
     };
     waydroid.enable = true;
     lxd.enable = true;
+    virtualbox = {
+      host = {
+        enable = true;
+        enableExtensionPack = true;
+      };
+
+    };
   };
 
   services = {
