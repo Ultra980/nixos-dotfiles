@@ -64,7 +64,7 @@ in {
         xh
         du-dust
         duf
-
+        virtualbox
       ];
     };
     programs = {
