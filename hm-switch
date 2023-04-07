@@ -1,1 +1,1 @@
-nix run . switch -- --flake . --impure
+nix run . switch -- --flake .
