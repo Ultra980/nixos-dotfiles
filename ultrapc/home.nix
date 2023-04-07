@@ -65,6 +65,7 @@ in {
         du-dust
         duf
         virtualbox
+        spotify
       ];
     };
     programs = {
