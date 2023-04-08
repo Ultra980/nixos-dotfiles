@@ -8,7 +8,7 @@ in {
     imports = [ inputs.nix-doom-emacs.hmModule ];
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
-    nixpkgs.config.allowedUnfreePredicate = _: true;
+    nixpkgs.config.allowUnfreePredicate = (pkg: true);
     home = {
       username = "ultra";
       homeDirectory = "/home/ultra/";
