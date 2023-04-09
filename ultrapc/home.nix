@@ -67,6 +67,7 @@ in {
         duf
         virtualbox
         spotify
+        appimage-run
       ];
     };
     programs = {
