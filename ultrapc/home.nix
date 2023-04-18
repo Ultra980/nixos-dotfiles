@@ -71,6 +71,7 @@ in {
         virtualbox
         spotify
         appimage-run
+        xivlauncher
       ];
     };
     programs = {
