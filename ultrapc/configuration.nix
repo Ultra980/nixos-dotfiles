@@ -176,7 +176,7 @@ in {
 
   services = {
     emacs = {
-      enable = true;
+      enable = false; # takes a lot of time to compile
       package = doom-emacs.override {
         doomPrivateDir = ./doom.d;
       };

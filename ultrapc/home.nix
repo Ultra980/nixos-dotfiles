@@ -9,6 +9,9 @@ in {
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
     nixpkgs.config.allowUnfreePredicate = (pkg: true);
+    nixpkgs.config.permittedInsecurePackages = [
+      "electron-21.4.0"
+    ];
     home = {
       username = "ultra";
       homeDirectory = "/home/ultra/";
@@ -73,7 +76,7 @@ in {
     programs = {
       home-manager.enable = true;
       doom-emacs = {
-        enable = true;
+        enable = false; # takes a lot of time to compile
         doomPrivateDir = ./doom.d;
       };
       # fish.enable = true;
