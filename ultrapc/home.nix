@@ -72,6 +72,8 @@ in {
         spotify
         appimage-run
         xivlauncher
+        prismlauncher
+        ghostwriter
       ];
     };
     programs = {
