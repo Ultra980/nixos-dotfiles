@@ -55,8 +55,6 @@ in {
     LC_TIME = "ro_RO.utf8";
   };
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -206,6 +204,14 @@ in {
       # Keymap
       layout = "ro";
       xkbVariant = "";
+    };
+    apcupsd = {
+      enable = true;
+    };
+
+    # Enable CUPS to print documents.
+    printing = {
+      enable = true;
     };
   };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
