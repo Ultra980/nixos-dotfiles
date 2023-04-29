@@ -74,6 +74,8 @@ in {
         xivlauncher
         prismlauncher
         ghostwriter
+        skypeforlinux
+        man-pages
       ];
     };
     programs = {
