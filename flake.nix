@@ -29,7 +29,7 @@
                 pkgs = nixpkgs.legacyPackages.x86_64-linux;
                 extraSpecialArgs = { inherit inputs; };
                 modules = [
-                    ./ultrapc/home.nix
+                    ./users/ultra/home.nix
                     (args: { # https://ayats.org/blog/channels-to-flakes
                          xdg.configFile."nix/inputs/nixpkgs".source = nixpkgs.outPath;
                          home.sessionVariables.NIX_PATH = "nixpkgs=${args.config.xdg.configHome}/nix/inputs/nixpkgs$\{NIX_PATH:+:$NIX_PATH}";
