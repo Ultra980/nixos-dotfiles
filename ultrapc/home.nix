@@ -76,6 +76,7 @@ in {
         ghostwriter
         skypeforlinux
         man-pages
+        ckan
       ];
     };
     programs = {
