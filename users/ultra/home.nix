@@ -77,6 +77,7 @@ in {
         skypeforlinux
         man-pages
         ckan
+        cool-retro-term
       ];
     };
     programs = {
