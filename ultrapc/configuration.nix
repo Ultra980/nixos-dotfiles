@@ -186,6 +186,7 @@ in {
         flatpak.enable = true;
         packagekit.enable = true;
         xserver = {
+            # videoDrivers = [ "nvidia" ];
             wacom.enable = true;
 
             enable = true;
@@ -229,10 +230,12 @@ hardware = {
         driSupport = true;
         driSupport32Bit = true;
     };
-    # nvidia = {
-        # package = config.boot.kernelPackages.nvidiaPackages.latest;
-        # modesetting.enable = false;
-    # };
+    /*
+    nvidia = {
+        package = config.boot.kernelPackages.nvidiaPackages.latest;
+        modesetting.enable = true;
+    };
+    */
 };
 
 }
