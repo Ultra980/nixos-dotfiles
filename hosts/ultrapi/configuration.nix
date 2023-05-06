@@ -86,4 +86,8 @@
         allowUnfree = true;
       };
     };
+
+    system = { 
+      stateVersion = 23.05; # Do NOT change.
+    };
   }
