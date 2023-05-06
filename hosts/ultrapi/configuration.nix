@@ -9,18 +9,21 @@
     helix = inputs.helix.packages.${pkgs.system}.default;
 
 
+/*
     nixosHardware = pkgs.fetchFromGitHub {
           owner = "NixOS";
           repo = "nixos-hardware";
           rev = "51559e691f1493a26f94f1df1aaf516bb507e78b";
           sha256 = "0spswivyk006h5xr0a0yhr7wr9fh0kg7cfyxqmk521svf3x1pnr8";
     };
+*/
   in {
 
     # imports = ["${fetchTarball "https://github.com/NixOS/nixos-hardware/archive/936e4649098d6a5e0762058cb7687be1b2d90550.tar.gz" }/raspberry-pi/4"];
 
     imports = [
-      "${nixosHardware}/raspberry-pi/4"
+      # "${nixosHardware}/raspberry-pi/4"
+      "${inputs.nixos-hardware}/raspberry-pi/4"
     ];
 
     fileSystems = {
