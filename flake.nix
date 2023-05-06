@@ -17,7 +17,7 @@
             system = "x86_64-linux";
             specialArgs = { inherit inputs; };
             modules = [
-                ./ultrapc/configuration.nix
+                ./hosts/ultrapc/configuration.nix
                 {
                     environment.etc."nix/inputs/nixpkgs".source = nixpkgs.outPath;    
                     nix.nixPath = [ "nixpkgs=/etc/nix/inputs/nixpkgs" ];
