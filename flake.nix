@@ -13,16 +13,29 @@
     };
 
     outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-        nixosConfigurations.ultrapc = nixpkgs.lib.nixosSystem {
-            system = "x86_64-linux";
-            specialArgs = { inherit inputs; };
-            modules = [
-                ./hosts/ultrapc/configuration.nix
-                {
-                    environment.etc."nix/inputs/nixpkgs".source = nixpkgs.outPath;    
-                    nix.nixPath = [ "nixpkgs=/etc/nix/inputs/nixpkgs" ];
-                }
-            ];
+        nixosConfigurations = {
+            ultrapc = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                specialArgs = { inherit inputs; };
+                modules = [
+                    ./hosts/ultrapc/configuration.nix
+                    {
+                        environment.etc."nix/inputs/nixpkgs".source = nixpkgs.outPath;    
+                        nix.nixPath = [ "nixpkgs=/etc/nix/inputs/nixpkgs" ];
+                    }
+                ];
+            };
+            ultrapi = nixpkgs.lib.nixosSystem {
+                system = "aarch64-linux";
+                specialArgs = { inherit inputs; };
+                modules = [
+                    ./hosts/ultrapi/configuration.nix
+                    {
+                        environment.etc."nix/inputs/nixpkgs".source = nixpkgs.outPath;
+                        nix.nixPath = [ "nixpkgs=/etc/nix/inputs/nixpkgs" ];
+                    }
+                ];
+            };
         };
         defaultPackage.x86_64-linux = home-manager.defaultPackage.x86_64-linux;
         defaultPackage.aarch64-linux = home-manager.defaultPackage.aarch64-linux;
