@@ -4,6 +4,7 @@ let
   doom-emacs = inputs.nix-doom-emacs.packages.${pkgs.system}.default.override {
       doomPrivateDir = ./doom.d;
   };
+  helix = inputs.helix.packages.${pkgs.system}.default;
 in {
     imports = [ inputs.nix-doom-emacs.hmModule ];
     # Allow unfree packages
@@ -71,13 +72,14 @@ in {
         virtualbox
         spotify
         appimage-run
-        xivlauncher
+         # xivlauncher # Fails to build
         prismlauncher
         ghostwriter
         skypeforlinux
         man-pages
         ckan
         cool-retro-term
+        helix
       ];
     };
     programs = {

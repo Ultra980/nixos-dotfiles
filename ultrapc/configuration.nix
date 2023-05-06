@@ -28,15 +28,22 @@ in {
         plymouth.enable = true;
     };
 
-    networking.hostName = "ultrapc"; # Define your hostname.
+    networking = {
+        hostName = "ultrapc"; # Define your hostname.
+
+        # Enable networking
+        networkmanager.enable = true;
+
+        hosts = {
+          "192.168.1.221" = [ "pi" "pi-master" ];  
+        };
+    };
     # networking.wireless.enable = true;    # Enables wireless support via wpa_supplicant.
 
     # Configure network proxy if necessary
     # networking.proxy.default = "http://user:password@proxy:port/";
     # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-    # Enable networking
-    networking.networkmanager.enable = true;
 
     # Set your time zone.
     time.timeZone = "Europe/Bucharest";
