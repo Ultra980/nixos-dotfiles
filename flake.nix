@@ -9,6 +9,7 @@
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        helix.url = "github:helix-editor/helix";    
     };
 
     outputs = { self, nixpkgs, home-manager, ... }@inputs: {
@@ -24,6 +25,7 @@
             ];
         };
         defaultPackage.x86_64-linux = home-manager.defaultPackage.x86_64-linux;
+        defaultPackage.aarch64-linux = home-manager.defaultPackage.aarch64-linux;
         homeConfigurations = {
             ultra = home-manager.lib.homeManagerConfiguration {
                 pkgs = nixpkgs.legacyPackages.x86_64-linux;
