@@ -16,6 +16,7 @@ in {
     nix.settings.trusted-users = [ "root" "ultra" ];
 
     boot = {
+	kernelPackages = pkgs.linuxPackages_latest; # Use the latest kernel
         loader = {
             systemd-boot.enable = true;
             efi = {
@@ -168,8 +169,8 @@ in {
         lxd.enable = true;
         virtualbox = {
             host = {
-                enable = true;
-                enableExtensionPack = true;
+                enable = false; # it takes a REALLY long time (and a lot of CPU) to build, and it still doesn't work.
+                enableExtensionPack = false; # false because this might build it (idk)
             };
 
         };
