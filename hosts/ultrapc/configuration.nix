@@ -37,6 +37,10 @@ in {
         hosts = {
           "192.168.1.221" = [ "pi" "pi-master" ];  
         };
+
+        nameservers = [
+            "192.168.1.221"
+        ];
     };
     # networking.wireless.enable = true;    # Enables wireless support via wpa_supplicant.
 
