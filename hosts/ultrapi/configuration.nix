@@ -49,9 +49,11 @@
        openssh.enable = true;
        adguardhome = {
           enable = true;
+          openFirewall = true;
           settings = {
             bind_host = "192.168.1.221";
-            bootstrap_dns = "8.8.8.8, 8.8.4.4";
+            bind_port = 3000;
+            # bootstrap_dns = "8.8.8.8, 8.8.4.4";
           };
        };
      };
