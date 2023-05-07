@@ -42,9 +42,19 @@
       vim
       helix
       docker
+      git
     ];
 
-    services.openssh.enable = true;
+    services = {
+       openssh.enable = true;
+       adguardhome = {
+          enable = true;
+          settings = {
+            bind_host = "192.168.1.221";
+            bootstrap_dns = "8.8.8.8, 8.8.4.4";
+          };
+       };
+     };
 
     users = {
       mutableUsers = false;
@@ -88,6 +98,6 @@
     };
 
     system = { 
-      stateVersion = 23.05; # Do NOT change.
+      stateVersion = "23.05"; # Do NOT change.
     };
   }
