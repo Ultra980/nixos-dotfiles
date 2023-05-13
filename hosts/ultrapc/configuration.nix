@@ -35,7 +35,7 @@ in {
         networkmanager.enable = true;
 
         hosts = {
-          "192.168.1.221" = [ "pi" "pi-master" ];  
+          "192.168.0.221" = [ "pi" "pi-master" ];  
         };
 
         nameservers = [
