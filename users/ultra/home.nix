@@ -72,7 +72,7 @@ in {
         virtualbox
         spotify
         appimage-run
-         # xivlauncher # Fails to build
+        xivlauncher # No longer fails to build!
         prismlauncher
         ghostwriter
         skypeforlinux
