@@ -126,6 +126,7 @@ in {
             git
             starship
             plymouth
+            clangd
         ];
         variables = {
             NIX_AUTO_RUN = "!";
