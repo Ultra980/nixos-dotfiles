@@ -1,12 +1,16 @@
-{ pkgs, inputs, lib, ... }: 
+{ pkgs, inputs, lib, config, ... }: 
 let
   nix-software-center = inputs.nix-software-center.packages.${pkgs.system}.nix-software-center;
   doom-emacs = inputs.nix-doom-emacs.packages.${pkgs.system}.default.override {
       doomPrivateDir = ./doom.d;
   };
   helix = inputs.helix.packages.${pkgs.system}.default;
-  nixpkgs-master-pkgs = inputs.nixpkgs-master.legacyPackages.${pkgs.system};
-  nixpkgs-master = inputs.nixpkgs-master;
+  # nixpkgs-master-pkgs = inputs.nixpkgs-master.legacyPackages.${pkgs.system};
+  # nixpkgs-master = inputs.nixpkgs-master;
+  nixpkgs-master = import inputs.nixpkgs-master {
+      inherit (config.nixpkgs) config overlays;
+      inherit (pkgs) system;
+  };
 in {
     imports = [ inputs.nix-doom-emacs.hmModule ];
     # Allow unfree packages
@@ -15,6 +19,7 @@ in {
     nixpkgs.config.permittedInsecurePackages = [
       "electron-21.4.0"
     ];
+    /*
     nixpkgs-master.config = {
       allowUnfree = true;
       allowUnfreePredicate = (pkg: true);
@@ -22,6 +27,7 @@ in {
         "electron-21.4.0"
       ];
     };
+    */
     home = {
       username = "ultra";
       homeDirectory = "/home/ultra/";
@@ -82,7 +88,7 @@ in {
         spotify
         appimage-run
         # xivlauncher # Still fails to build :(
-        nixpkgs-master-pkgs.xivlauncher # It's fixed on master
+        nixpkgs-master.xivlauncher # It's fixed on master
         prismlauncher
         ghostwriter
         skypeforlinux
