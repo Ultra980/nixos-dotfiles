@@ -127,6 +127,7 @@ in {
             starship
             plymouth
             clang-tools
+            nil
         ];
         variables = {
             NIX_AUTO_RUN = "!";
