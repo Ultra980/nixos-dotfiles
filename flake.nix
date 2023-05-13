@@ -10,7 +10,9 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
         helix.url = "github:helix-editor/helix";  
-	nixos-hardware.url = "github:NixOS/nixos-hardware";  
+	nixos-hardware.url = "github:NixOS/nixos-hardware";
+
+        nixpkgs-master.url = "github:NixOS/nixpkgs/master";
     };
 
     outputs = { self, nixpkgs, home-manager, ... }@inputs: {
