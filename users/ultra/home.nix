@@ -5,6 +5,8 @@ let
       doomPrivateDir = ./doom.d;
   };
   helix = inputs.helix.packages.${pkgs.system}.default;
+  nixpkgs-master-pkgs = inputs.nixpkgs-master.legacyPackages.${pkgs.system};
+  nixpkgs-master = inputs.nixpkgs-master;
 in {
     imports = [ inputs.nix-doom-emacs.hmModule ];
     # Allow unfree packages
@@ -13,6 +15,13 @@ in {
     nixpkgs.config.permittedInsecurePackages = [
       "electron-21.4.0"
     ];
+    nixpkgs-master.config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (pkg: true);
+      permittedInsecurePackages = [
+        "electron-21.4.0"
+      ];
+    };
     home = {
       username = "ultra";
       homeDirectory = "/home/ultra/";
@@ -73,6 +82,7 @@ in {
         spotify
         appimage-run
         # xivlauncher # Still fails to build :(
+        nixpkgs-master-pkgs.xivlauncher # It's fixed on master
         prismlauncher
         ghostwriter
         skypeforlinux

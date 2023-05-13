@@ -565,6 +565,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-master": {
+      "locked": {
+        "lastModified": 1683964299,
+        "narHash": "sha256-4wzIhSjf+r3UC+1oS/hKW/kjMBEn7Bbvy9cIok6jZPY=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "1f68716877f8fde4c9f70ee2b237b3f405792b98",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgsV1": {
       "locked": {
         "lastModified": 1678500271,
@@ -786,7 +802,8 @@
         "nix-doom-emacs": "nix-doom-emacs",
         "nix-software-center": "nix-software-center",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs_4"
+        "nixpkgs": "nixpkgs_4",
+        "nixpkgs-master": "nixpkgs-master"
       }
     },
     "rotate-text": {
