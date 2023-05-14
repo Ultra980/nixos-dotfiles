@@ -133,7 +133,12 @@ in {
             NIX_AUTO_RUN = "!";
         };
     };
-    programs.fish.enable = true;
+    programs = {
+        fish.enable = true;
+        kdeconnect = {
+            enable = true;
+        };
+    };
  # programs.nushell.enable = true;
  #    users.defaultUserShell = pkgs.zsh;
 
@@ -232,6 +237,7 @@ in {
         printing = {
             enable = true;
         };
+        twingate.enable = true;
     };
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
