@@ -95,7 +95,7 @@ in {
         man-pages
         ckan
         cool-retro-term
-        helix
+        # helix
       ];
     };
     programs = {
@@ -105,5 +105,54 @@ in {
         doomPrivateDir = ./doom.d;
       };
       # fish.enable = true;
+      helix = {
+        enable = true;
+        package = helix;
+        languages = [
+          {
+            name = "cpp";
+            scope = "source.cpp";
+            indent = {
+              tab-width = 4;
+              unit = " ";
+            };
+            language-server.command = "clangd";
+            file-types = [ "cpp" ];
+          }
+          {
+            name = "c";
+            scope = "source.c";
+            indent = {
+              tab-width = 4;
+              unit = " ";
+            };
+            language-server.command = "clangd";
+            file-types = [ "c" ];
+          }
+          {
+            name = "nix";
+            scope = "source.nix";
+            indent = {
+              tab-width = 4;
+              unit = " ";
+            };
+            language-server.command = "nil";
+            file-types = [ "nix" ];
+          }
+        ];
+        settings = {
+          theme = "everblush";
+          editor = {
+            line-number = "relative";
+            mouse = true;
+            cursor-shape = {
+              insert = "bar";
+              normal = "block";
+              select = "underline";
+            };
+            file-picker.hidden = false;
+          };
+        };
+      };
     };
 }
