@@ -152,6 +152,7 @@ in {
             };
             file-picker.hidden = false;
           };
+          auto-save = true;
         };
       };
     };
