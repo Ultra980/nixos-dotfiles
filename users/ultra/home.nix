@@ -105,6 +105,8 @@ in {
         doomPrivateDir = ./doom.d;
       };
       # fish.enable = true;
+
+      # Helix config
       helix = {
         enable = true;
         package = helix;
@@ -151,8 +153,9 @@ in {
               select = "underline";
             };
             file-picker.hidden = false;
+            auto-save = true;
+            true-color = true;
           };
-          auto-save = true;
         };
       };
     };
