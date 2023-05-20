@@ -110,38 +110,45 @@ in {
       helix = {
         enable = true;
         package = helix;
-        languages.language = [
-          {
-            name = "cpp";
-            scope = "source.cpp";
-            indent = {
-              tab-width = 4;
-              unit = " ";
-            };
-            language-server.command = "clangd";
-            file-types = [ "cpp" ];
-          }
-          {
-            name = "c";
-            scope = "source.c";
-            indent = {
-              tab-width = 4;
-              unit = " ";
-            };
-            language-server.command = "clangd";
-            file-types = [ "c" ];
-          }
-          {
-            name = "nix";
-            scope = "source.nix";
-            indent = {
-              tab-width = 4;
-              unit = " ";
-            };
-            language-server.command = "nil";
-            file-types = [ "nix" ];
-          }
-        ];
+        languages = {
+          language-server = with pkgs; {
+            cpp.command = "${clang-tools}/bin/clangd";
+            c.command = "${clang-tools}/bin/clangd";
+            nix.command = "${nil}/bin/nil";
+          };
+          language = [
+            {
+              name = "cpp";
+              scope = "source.cpp";
+              indent = {
+                tab-width = 4;
+                unit = " ";
+              };
+              # language-server.command = "clangd";
+              file-types = [ "cpp" ];
+            }
+            {
+              name = "c";
+              scope = "source.c";
+              indent = {
+                tab-width = 4;
+                unit = " ";
+              };
+              # language-server.command = "clangd";
+              file-types = [ "c" ];
+            }
+            {
+              name = "nix";
+              scope = "source.nix";
+              indent = {
+                tab-width = 4;
+                unit = " ";
+              };
+              # language-server.command = "nil";
+              file-types = [ "nix" ];
+            }
+          ];
+        };
         settings = {
           theme = "everblush";
           editor = {
