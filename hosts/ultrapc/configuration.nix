@@ -237,7 +237,7 @@ in {
         printing = {
             enable = true;
         };
-        twingate.enable = true;
+        twingate.enable = false;
     };
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
