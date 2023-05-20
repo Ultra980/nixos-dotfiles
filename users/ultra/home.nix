@@ -110,7 +110,7 @@ in {
       helix = {
         enable = true;
         package = helix;
-        languages = [
+        languages.language = [
           {
             name = "cpp";
             scope = "source.cpp";
