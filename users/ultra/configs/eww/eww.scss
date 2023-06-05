@@ -14,15 +14,20 @@
 }
 
 .workspace {
-  // border-top: 1px solid #00aaaa;
   padding: 10px;
   font-size: 15px;
   border-radius: 5px;
   background-color: #0e2636;
   color: #00b0d0;
-  // padding-top: 0px;
 }
 
+.active_workspace {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  background-color: #0eaabf;
+  color: #002222;
+}
 /*
 .workspace {
   border-top: 0px;

@@ -48,7 +48,7 @@
         (workspace :number num))))
         
 (defwidget workspace [number]
-  (box :class "workspace"
+  (box :class { number == curr_workspace ? "active_workspace" : "workspace" }
     (button :onclick "hyprctl dispatch workspace ${number}" number)))
 
 (defpoll curr_workspace :interval "0s"
