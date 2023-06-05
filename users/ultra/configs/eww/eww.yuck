@@ -30,6 +30,7 @@
   (box
     :class "time"
     time))
+    
 (defpoll time :interval "1s"
   `date +'%I
 %M
@@ -49,3 +50,6 @@
 (defwidget workspace [number]
   (box :class "workspace"
     (button :onclick "hyprctl dispatch workspace ${number}" number)))
+
+(defpoll curr_workspace :interval "0s"
+ `hyprctl activeworkspace -j | jq '.id'`)
