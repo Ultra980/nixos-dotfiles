@@ -115,6 +115,7 @@ in {
         notify-desktop
         libnotify
         xdg-desktop-portal-hyprland
+        jq
       ];
     };
 
