@@ -12,7 +12,6 @@ in {
             ./hardware-configuration.nix
             ./cachix.nix
         ];
-
     nix.settings = {
         trusted-users = [ "root" "ultra" ];
         experimental-features = [ "nix-command" "flakes" ];
@@ -112,6 +111,9 @@ in {
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment = {
+        sessionVariables = {
+            QT_QPA_PLATFORMTHEME = "qt5ct";
+        };
         systemPackages = with pkgs; [
             wget
             neovim
@@ -221,10 +223,8 @@ in {
 
             # Enable KDE Plasma 5 
             displayManager = {
-
-                # Enable autologin 
                 autoLogin = { 
-                    enable = true;
+                    enable = false;
                     user = "ultra";
                 };
 
