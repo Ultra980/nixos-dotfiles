@@ -11,8 +11,12 @@ let
       inherit (config.nixpkgs) config overlays;
       inherit (pkgs) system;
   };
+  hypr-contrib = inputs.hypr-contrib.packages.${pkgs.system};
 in {
-    imports = [ inputs.nix-doom-emacs.hmModule ];
+    imports = [ 
+      inputs.nix-doom-emacs.hmModule
+      # inputs.hyprland.homeManagerModules.default
+    ];
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
     nixpkgs.config.allowUnfreePredicate = (pkg: true);
@@ -95,9 +99,26 @@ in {
         man-pages
         ckan
         cool-retro-term
-        # helix
+        wofi
+        hyprpaper
+        alacritty
+        tofi
+        dunst
+        wl-clipboard
+        polkit-kde-agent
+        grim
+        hypr-contrib.grimblast
+        hypr-contrib.scratchpad
+        kitty
+        waybar
+        eww-wayland
+        notify-desktop
+        libnotify
+        xdg-desktop-portal-hyprland
       ];
     };
+
+    # ${config.xdg.configFile}."hypr/hyprland.conf".source = ./configs/hyprland/hyprland.conf;
     programs = {
       home-manager.enable = true;
       doom-emacs = {
@@ -165,5 +186,12 @@ in {
           };
         };
       };
+      /*
+     hyprland = {
+        enable = true;
+        extraConfig = builtins.readFile ./configs/hyprland/hyprland.conf;
+      };
+      */ 
     };
-}
+    
+  }

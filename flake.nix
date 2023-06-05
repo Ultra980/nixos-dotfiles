@@ -13,6 +13,8 @@
 	nixos-hardware.url = "github:NixOS/nixos-hardware";
 
         nixpkgs-master.url = "github:NixOS/nixpkgs/master";
+        hypr-contrib.url = "github:hyprwm/contrib";
+        # hyprland.url = "github:hyprwm/Hyprland";
     };
 
     outputs = { self, nixpkgs, home-manager, ... }@inputs: {
@@ -29,6 +31,10 @@
                             "nixos-config=/home/ultra/.nixdotfiles"
                         ];
                     }
+
+                    # Hyprland
+                    # inputs.hyprland.nixosModules.default
+                    # { programs.hyprland.enable = true; }
                 ];
             };
             ultrapi = nixpkgs.lib.nixosSystem {
@@ -55,6 +61,9 @@
                          xdg.configFile."nix/inputs/nixpkgs".source = nixpkgs.outPath;
                          home.sessionVariables.NIX_PATH = "nixpkgs=${args.config.xdg.configHome}/nix/inputs/nixpkgs$\{NIX_PATH:+:$NIX_PATH}";
                     })
+                    # Hyprland
+                    # inputs.hyprland.homeManagerModules.default
+                    # { wayland.windowManager.hyprland.enable = true; }
                 ];
             }; 
         };

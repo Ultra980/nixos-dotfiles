@@ -13,7 +13,12 @@ in {
             ./cachix.nix
         ];
 
-    nix.settings.trusted-users = [ "root" "ultra" ];
+    nix.settings = {
+        trusted-users = [ "root" "ultra" ];
+        experimental-features = [ "nix-command" "flakes" ];
+        substituters = [ "https://hyprland.cachix.org" ];
+        trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+    };
 
     boot = {
 	kernelPackages = pkgs.linuxPackages_latest; # Use the latest kernel
@@ -128,6 +133,7 @@ in {
             plymouth
             clang-tools
             nil
+            pkgconfig
         ];
         variables = {
             NIX_AUTO_RUN = "!";
@@ -136,6 +142,9 @@ in {
     programs = {
         fish.enable = true;
         kdeconnect = {
+            enable = true;
+        };
+        hyprland = {
             enable = true;
         };
     };
@@ -239,7 +248,6 @@ in {
         };
         twingate.enable = false;
     };
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 
  # NVIDIA config
