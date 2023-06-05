@@ -1,0 +1,51 @@
+(defwindow bar
+  :monitor 0
+  :windowtype "dock"
+  :stacking "fg"
+  :exclusive true
+  :position "left"
+  :reserve (struts :distance "4%" :side "left")
+  :class "bar"
+  :valign "start"
+  ; :spacing "4px"
+  :geometry ( geometry :width "2%"
+                       :height "99%"
+                       :x "8px"
+                       :y "0%"
+                       :anchor "left center" )
+  (box
+    :orientation "v"
+    :valign "start"
+    :halign "center"
+    :space-evenly true
+    :spacing 5
+    (time)
+    (workspaces)
+  )
+  ;(greeter :text "Amogus"
+  ;         :name "Sus")
+)
+
+(defwidget time []
+  (box
+    :class "time"
+    time))
+(defpoll time :interval "1s"
+  `date +'%I
+%M
+%S
+%p'`)
+
+(defvar workspace_nums "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]")
+(defwidget workspaces []
+  (box :class "workspaces"
+       :orientation "v"
+       :space-evenly true
+       :halign "start"
+       :spacing 10
+      (for num in workspace_nums
+        (workspace :number num))))
+        
+(defwidget workspace [number]
+  (box :class "workspace"
+    (button :onclick "hyprctl dispatch workspace ${number}" number)))

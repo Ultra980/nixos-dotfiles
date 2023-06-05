@@ -1,0 +1,30 @@
+* {
+  all: unset;
+  font-family: "JetBrainsMono Nerd Font";
+}
+
+.bar {
+  border-radius: 10px;
+  background-color: #0e2a3f;
+}
+
+.time {
+  font-size: 19px;
+  color: #00e0f0;
+}
+
+.workspace {
+  // border-top: 1px solid #00aaaa;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  background-color: #0e2636;
+  color: #00b0d0;
+  // padding-top: 0px;
+}
+
+/*
+.workspace {
+  border-top: 0px;
+}
+*/

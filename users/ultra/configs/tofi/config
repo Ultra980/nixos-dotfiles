@@ -1,0 +1,26 @@
+font = "/home/ultra/.local/share/fonts/j/JetBrainsMonoNerdFont_Regular.ttf"
+font-size = 23
+
+font-features = "liga 1"
+text-color = #DDFFFF
+
+selection-color = #00CCDD
+placeholder-color = #112233
+
+width = 50%
+height = 50%
+background-color = #001222
+outline-color = #001111
+outline-width = 10
+border-color = #00CCDD
+corner-radius = 15
+
+text-cursor-style = bar
+text-cursor-color = #DDFFFF
+text-cursor-thickness = 2
+
+prompt-text = "> "
+placeholder-text = "Konsole"
+
+text-cursor = true
+history = true
