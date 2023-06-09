@@ -225,7 +225,7 @@ in {
             displayManager = {
                 autoLogin = { 
                     enable = false;
-                    user = "ultra";
+                    # user = "ultra";
                 };
 
                 sddm = {
