@@ -117,6 +117,7 @@ in {
         xdg-desktop-portal-hyprland
         jq
         libsForQt5.alligator
+        thunderbird
       ];
     };
 
