@@ -118,6 +118,7 @@ in {
         jq
         libsForQt5.alligator
         thunderbird
+        brave
       ];
     };
 
