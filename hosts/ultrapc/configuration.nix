@@ -6,17 +6,29 @@
 let
     nix-software-center = inputs.nix-software-center.packages.${pkgs.system}.nix-software-center;
     doom-emacs = inputs.nix-doom-emacs.packages.${pkgs.system}.default;
+    nh = inputs.nix-but-gigachad.packages.${pkgs.system}.default;
 in {
     imports =
         [ # Include the results of the hardware scan.
             ./hardware-configuration.nix
             ./cachix.nix
+            inputs.nix-but-gigachad.nixosModules.default
         ];
+    nh = {
+        enable = true;
+        clean.enable = true;
+    };
     nix.settings = {
         trusted-users = [ "root" "ultra" ];
         experimental-features = [ "nix-command" "flakes" ];
-        substituters = [ "https://hyprland.cachix.org" ];
-        trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+        substituters = [ 
+            "https://hyprland.cachix.org" 
+            "https://viperml.cachix.org"
+        ];
+        trusted-public-keys = [ 
+            "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" 
+            "viperml.cachix.org-1:qZhKBMTfmcLL+OG6fj/hzsMEedgKvZVFRRAhq7j8Vh8="
+        ];
     };
 
     boot = {
@@ -136,6 +148,7 @@ in {
             clang-tools
             nil
             pkgconfig
+            nh
         ];
         variables = {
             NIX_AUTO_RUN = "!";
@@ -223,10 +236,12 @@ in {
 
             # Enable KDE Plasma 5 
             displayManager = {
+                /*
                 autoLogin = { 
                     enable = false;
-                    # user = "ultra";
+                    user = "ultra";
                 };
+                */
 
                 sddm = {
                     enable = true;
