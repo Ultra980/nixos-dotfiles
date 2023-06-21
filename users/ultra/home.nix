@@ -12,6 +12,7 @@ let
       inherit (pkgs) system;
   };
   hypr-contrib = inputs.hypr-contrib.packages.${pkgs.system};
+  nh = inputs.nix-but-gigachad.packages.${pkgs.system}.default;
 in {
     imports = [ 
       inputs.nix-doom-emacs.hmModule
@@ -119,6 +120,7 @@ in {
         libsForQt5.alligator
         thunderbird
         brave
+        nh
       ];
     };
 
