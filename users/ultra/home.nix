@@ -121,6 +121,7 @@ in {
         thunderbird
         brave
         nh
+        irssi
       ];
     };
 

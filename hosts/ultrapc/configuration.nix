@@ -149,6 +149,7 @@ in {
             nil
             pkgconfig
             nh
+            ksnip
         ];
         variables = {
             NIX_AUTO_RUN = "!";
@@ -162,6 +163,7 @@ in {
         hyprland = {
             enable = true;
         };
+        command-not-found.enable = true;
     };
  # programs.nushell.enable = true;
  #    users.defaultUserShell = pkgs.zsh;
