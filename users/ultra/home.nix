@@ -4,6 +4,7 @@ let
   doom-emacs = inputs.nix-doom-emacs.packages.${pkgs.system}.default.override {
       doomPrivateDir = ./doom.d;
   };
+  eww-git = inputs.eww.packages.${pkgs.system}.default;
   helix = inputs.helix.packages.${pkgs.system}.default;
   # nixpkgs-master-pkgs = inputs.nixpkgs-master.legacyPackages.${pkgs.system};
   # nixpkgs-master = inputs.nixpkgs-master;
@@ -16,7 +17,7 @@ let
 in {
     imports = [ 
       inputs.nix-doom-emacs.hmModule
-      # inputs.hyprland.homeManagerModules.default
+      inputs.hyprland.homeManagerModules.default
     ];
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
@@ -112,7 +113,9 @@ in {
         hypr-contrib.scratchpad
         kitty
         waybar
-        eww-wayland
+        (eww-git.override {
+          withWayland = true;
+        })
         notify-desktop
         libnotify
         xdg-desktop-portal-hyprland
@@ -122,6 +125,7 @@ in {
         brave
         nh
         irssi
+        syncthing
       ];
     };
 
@@ -193,14 +197,25 @@ in {
           };
         };
       };
-      /*
-     hyprland = {
-        enable = true;
-        extraConfig = builtins.readFile ./configs/hyprland/hyprland.conf;
-      };
-      */ 
+      
+       
     };
     services = {
       dunst.enable = false;    
+    };
+    systemd.user = {
+      services = {
+        dunst.Unit = {
+          After = lib.mkForce [];
+          WantedBy = [ "hyprland-session.target" ];
+          PartOf = lib.mkForce [ "hyprland-session.target" ];
+        };
+      };
+    };
+    wayland.windowManager.hyprland = {
+        enable = true;
+        package = pkgs.hyprland;
+        extraConfig = builtins.readFile ./configs/hyprland/hyprland.conf;
+        systemdIntegration = true;
     };
   }
