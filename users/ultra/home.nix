@@ -200,5 +200,7 @@ in {
       };
       */ 
     };
-    
+    services = {
+      dunst.enable = false;    
+    };
   }
