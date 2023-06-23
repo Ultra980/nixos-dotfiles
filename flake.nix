@@ -14,8 +14,8 @@
 
         nixpkgs-master.url = "github:NixOS/nixpkgs/master";
         hypr-contrib.url = "github:hyprwm/contrib";
-        # hyprland.url = "github:hyprwm/Hyprland";
-
+        hyprland.url = "github:hyprwm/Hyprland";
+        eww.url = "github:elkowar/eww";
         nix-but-gigachad.url = "github:viperML/nh";
     };
 
