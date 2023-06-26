@@ -50,6 +50,12 @@
                     }
                 ];
             };
+            iso = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                modules = [
+                    "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-plasma5-new-kernel.nix"
+                ];
+            };
         };
         defaultPackage.x86_64-linux = home-manager.defaultPackage.x86_64-linux;
         defaultPackage.aarch64-linux = home-manager.defaultPackage.aarch64-linux;
