@@ -150,12 +150,14 @@ in {
             pkgconfig
             nh
             ksnip
+            virt-manager
         ];
         variables = {
             NIX_AUTO_RUN = "!";
         };
     };
     programs = {
+        dconf.enable = true;
         fish.enable = true;
         kdeconnect = {
             enable = true;
@@ -204,6 +206,9 @@ in {
     '';
     
     virtualisation = {
+        libvirtd = {
+            enable = true;  
+        };
         podman = {
             enable = true;
             dockerCompat = true;
