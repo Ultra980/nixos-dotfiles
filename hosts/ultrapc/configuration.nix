@@ -18,6 +18,15 @@ in {
         enable = true;
         clean.enable = true;
     };
+    fonts = {
+        fontconfig = {
+            defaultFonts = {
+                serif = [ "JetBrainsMono Nerd Font" ];
+                sansSerif = [ "JetBrainsMono Nerd Font" ];
+                monospace = [ "JetBrainsMono Nerd Font" ];      
+            };
+        };
+    };
     nix.settings = {
         trusted-users = [ "root" "ultra" ];
         experimental-features = [ "nix-command" "flakes" ];
