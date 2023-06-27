@@ -126,6 +126,7 @@ in {
         nh
         irssi
         syncthing
+        android-studio
       ];
     };
 
