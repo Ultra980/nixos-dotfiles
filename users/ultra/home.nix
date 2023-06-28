@@ -126,7 +126,10 @@ in {
         nh
         irssi
         syncthing
-        android-studio
+        # android-studio # literally proprietary bloat, I don't want that garbage on my system.
+        flutter
+        comic-mono
+        screen
       ];
     };
 
