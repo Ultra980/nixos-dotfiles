@@ -130,6 +130,7 @@ in {
         flutter
         comic-mono
         screen
+        moonlander
       ];
     };
 
