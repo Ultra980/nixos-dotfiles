@@ -3,20 +3,42 @@
 
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-        nix-software-center.url = "github:vlinkz/nix-software-center";
-        nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
+        nix-software-center = {
+            url = "github:vlinkz/nix-software-center";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+        nix-doom-emacs = {
+            url = "github:nix-community/nix-doom-emacs";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
         home-manager = {
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-        helix.url = "github:helix-editor/helix/master";  
-	nixos-hardware.url = "github:NixOS/nixos-hardware";
-
+        helix = {
+            url = "github:helix-editor/helix/master";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+    	nixos-hardware = {
+            url = "github:NixOS/nixos-hardware";
+        };
         nixpkgs-master.url = "github:NixOS/nixpkgs/master";
-        hypr-contrib.url = "github:hyprwm/contrib";
-        hyprland.url = "github:hyprwm/Hyprland";
-        eww.url = "github:elkowar/eww";
-        nix-but-gigachad.url = "github:viperML/nh";
+        hypr-contrib = {
+            url = "github:hyprwm/contrib";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+        hyprland = {
+            url = "github:hyprwm/Hyprland";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+        eww = {
+            url = "github:elkowar/eww";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+        nix-but-gigachad = {
+            url = "github:viperML/nh";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
     outputs = { self, nixpkgs, home-manager, ... }@inputs: {
