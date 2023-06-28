@@ -93,8 +93,8 @@ in {
         virtualbox
         spotify
         appimage-run
-        # xivlauncher # Still fails to build :(
-        nixpkgs-master.xivlauncher # It's fixed on master
+        xivlauncher # No longer fails to build!
+        # nixpkgs-master.xivlauncher # It's fixed on unstable, as well as master, but the unstable input doesn't get updated every 5 picoseconds
         prismlauncher
         ghostwriter
         skypeforlinux
