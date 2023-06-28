@@ -160,6 +160,7 @@ in {
             nh
             ksnip
             virt-manager
+            flutter
         ];
         variables = {
             NIX_AUTO_RUN = "!";
