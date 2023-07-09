@@ -4,7 +4,7 @@ let
   doom-emacs = inputs.nix-doom-emacs.packages.${pkgs.system}.default.override {
       doomPrivateDir = ./doom.d;
   };
-  eww-git = inputs.eww.packages.${pkgs.system}.default;
+  # eww-git = inputs.eww.packages.${pkgs.system}.default;
   helix = inputs.helix.packages.${pkgs.system}.default;
   # nixpkgs-master-pkgs = inputs.nixpkgs-master.legacyPackages.${pkgs.system};
   # nixpkgs-master = inputs.nixpkgs-master;
@@ -113,9 +113,12 @@ in {
         hypr-contrib.scratchpad
         kitty
         waybar
+        /*
         (eww-git.override {
           withWayland = true;
         })
+        */
+        (eww.override { withWayland = true; })
         notify-desktop
         libnotify
         xdg-desktop-portal-hyprland
