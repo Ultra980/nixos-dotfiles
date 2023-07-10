@@ -39,6 +39,10 @@
             url = "github:viperML/nh";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        everblush = {
+            url = "github:Ultra980/everblush-gtk-flake";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
     outputs = { self, nixpkgs, home-manager, ... }@inputs: {
@@ -59,6 +63,20 @@
                     # Hyprland
                     # inputs.hyprland.nixosModules.default
                     # { programs.hyprland.enable = true; }
+                ];
+            };
+            hermes = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                specialArgs = { inherit inputs; };
+                modules = [
+                    ./hosts/hermes/configuration.nix
+                    {
+                        environment.etc."nix/inputs/nixpkgs".source = nixpkgs.outPath;
+                        nix.nixPath = [
+                            "nixpkgs=/etc/nix/inputs/nixpkgs"
+                            "nixos-config=/home/ultra/.nixdotfiles"  
+                        ];
+                    }
                 ];
             };
             ultrapi = nixpkgs.lib.nixosSystem {
