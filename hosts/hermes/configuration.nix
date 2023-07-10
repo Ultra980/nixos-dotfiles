@@ -99,9 +99,9 @@ in {
     description = "Alex Stan";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      firefox
       wezterm
-    #  thunderbird
+      gradience
+      gnome.tweaks
     ];
     shell = pkgs.fish;
   };
@@ -121,6 +121,7 @@ in {
     nerdfonts
     everblush
     bibata-cursors
+    adw-gtk3
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
