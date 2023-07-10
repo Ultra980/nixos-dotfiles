@@ -138,6 +138,7 @@ in {
     };
 
     # ${config.xdg.configFile}."hypr/hyprland.conf".source = ./configs/hyprland/hyprland.conf;
+    ${config.xdg.configFile}."presets/user/everblush.json".source = ./configs/presets/everblush.json;
     programs = {
       home-manager.enable = true;
       doom-emacs = {
