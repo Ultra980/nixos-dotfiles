@@ -102,6 +102,7 @@ in {
       wezterm
       gradience
       gnome.gnome-tweaks
+      alacritty
     ];
     shell = pkgs.fish;
   };
@@ -118,6 +119,7 @@ in {
     gnomeExtensions.blur-my-shell
     gnomeExtensions.rounded-window-corners
     gnomeExtensions.prime-indicator
+    gnomeExtensions.clipboard-indicator
     nerdfonts
     everblush
     bibata-cursors
@@ -183,4 +185,9 @@ in {
   services.xserver.libinput.touchpad.disableWhileTyping = false;
 
   programs.fish.enable = true;
+
+  virtualisation = {
+    lxc.enable = true;
+    waydroid.enable = true;
+  };
 }
