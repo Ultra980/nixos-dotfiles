@@ -101,7 +101,7 @@ in {
     packages = with pkgs; [
       wezterm
       gradience
-      gnome.tweaks
+      gnome.gnome-tweaks
     ];
     shell = pkgs.fish;
   };
