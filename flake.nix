@@ -47,11 +47,11 @@
 
     outputs = { self, nixpkgs, home-manager, ... }@inputs: {
         nixosConfigurations = {
-            ultrapc = nixpkgs.lib.nixosSystem {
+            titan = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 specialArgs = { inherit inputs; };
                 modules = [
-                    ./hosts/ultrapc/configuration.nix
+                    ./hosts/titan/configuration.nix
                     {
                         environment.etc."nix/inputs/nixpkgs".source = nixpkgs.outPath;    
                         nix.nixPath = [ 

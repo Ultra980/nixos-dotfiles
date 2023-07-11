@@ -54,7 +54,7 @@ in {
     };
 
     networking = {
-        hostName = "ultrapc"; # Define your hostname.
+        hostName = "titan"; # Define your hostname.
 
         # Enable networking
         networkmanager.enable = true;
