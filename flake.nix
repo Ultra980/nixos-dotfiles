@@ -7,10 +7,6 @@
             url = "github:vlinkz/nix-software-center";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-        nix-doom-emacs = {
-            url = "github:nix-community/nix-doom-emacs";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
         home-manager = {
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";

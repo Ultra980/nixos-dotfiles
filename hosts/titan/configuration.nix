@@ -5,7 +5,7 @@
 { config, pkgs, lib, inputs, ... }:
 let
     nix-software-center = inputs.nix-software-center.packages.${pkgs.system}.nix-software-center;
-    doom-emacs = inputs.nix-doom-emacs.packages.${pkgs.system}.default;
+    # doom-emacs = inputs.nix-doom-emacs.packages.${pkgs.system}.default;
     nh = inputs.nix-but-gigachad.packages.${pkgs.system}.default;
 in {
     imports =
@@ -239,9 +239,11 @@ in {
     services = {
         emacs = {
             enable = false; # takes a lot of time to compile
+            /*
             package = doom-emacs.override {
                 doomPrivateDir = ./doom.d;
             };
+            */
         };
         flatpak.enable = true;
         packagekit.enable = true;

@@ -1,9 +1,11 @@
 { pkgs, inputs, lib, config, ... }: 
 let
   nix-software-center = inputs.nix-software-center.packages.${pkgs.system}.nix-software-center;
+  /*
   doom-emacs = inputs.nix-doom-emacs.packages.${pkgs.system}.default.override {
       doomPrivateDir = ./doom.d;
   };
+  */
   # eww-git = inputs.eww.packages.${pkgs.system}.default;
   helix = inputs.helix.packages.${pkgs.system}.default;
   # nixpkgs-master-pkgs = inputs.nixpkgs-master.legacyPackages.${pkgs.system};
