@@ -136,6 +136,7 @@ in {
         comic-mono
         screen
         moonlander
+        amfora
       ];
     };
 

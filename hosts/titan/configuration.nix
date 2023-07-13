@@ -281,8 +281,10 @@ in {
             enable = true;
         };
         twingate.enable = false;
-        ipfs = {
+        kubo = {
             enable = true;  
+            startWhenNeeded = true;
+            autoMount = true;
         };
     };
 
