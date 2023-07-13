@@ -281,6 +281,9 @@ in {
             enable = true;
         };
         twingate.enable = false;
+        ipfs = {
+            enable = true;  
+        };
     };
 
 
