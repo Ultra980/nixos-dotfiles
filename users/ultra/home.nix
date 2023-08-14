@@ -1,4 +1,5 @@
-{ pkgs, inputs, lib, config, ... }: 
+inputs:
+{ pkgs, lib, config, ... }: 
 let
   nix-software-center = inputs.nix-software-center.packages.${pkgs.system}.nix-software-center;
   /*
@@ -18,7 +19,6 @@ let
   nh = inputs.nix-but-gigachad.packages.${pkgs.system}.default;
 in {
     imports = [ 
-      inputs.nix-doom-emacs.hmModule
       inputs.hyprland.homeManagerModules.default
     ];
     # Allow unfree packages
@@ -137,17 +137,16 @@ in {
         screen
         moonlander
         amfora
+        weechat
+        filezilla
+        fluffychat
       ];
     };
 
-    # ${config.xdg.configFile}."hypr/hyprland.conf".source = ./configs/hyprland/hyprland.conf;
-    ${config.xdg.configFile}."presets/user/everblush.json".source = ./configs/presets/everblush.json;
+    xdg.configFile."hypr/hyprland.conf".source = ./configs/hyprland/hyprland.conf;
+    xdg.configFile."presets/user/everblush.json".source = ./configs/presets/everblush.json;
     programs = {
       home-manager.enable = true;
-      doom-emacs = {
-        enable = false; # takes a lot of time to compile
-        doomPrivateDir = ./doom.d;
-      };
       # fish.enable = true;
 
       # Helix config

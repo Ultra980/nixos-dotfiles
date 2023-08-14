@@ -98,9 +98,8 @@
         homeConfigurations = {
             ultra = home-manager.lib.homeManagerConfiguration {
                 pkgs = nixpkgs.legacyPackages.x86_64-linux;
-                extraSpecialArgs = { inherit inputs; };
                 modules = [
-                    ./users/ultra/home.nix
+                    ( import ./users/ultra/home.nix inputs )
                     (args: { # https://ayats.org/blog/channels-to-flakes
                          xdg.configFile."nix/inputs/nixpkgs".source = nixpkgs.outPath;
                          home.sessionVariables.NIX_PATH = "nixpkgs=${args.config.xdg.configHome}/nix/inputs/nixpkgs$\{NIX_PATH:+:$NIX_PATH}";

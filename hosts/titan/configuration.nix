@@ -194,8 +194,8 @@ in {
     # services.openssh.enable = true;
 
     # Open ports in the firewall.
-    # networking.firewall.allowedTCPPorts = [ ... ];
-    # networking.firewall.allowedUDPPorts = [ ... ];
+    networking.firewall.allowedTCPPorts = [ 21 20 ];
+    networking.firewall.allowedUDPPorts = [ 21 20 ];
     # Or disable the firewall altogether.
     # networking.firewall.enable = false;
 
@@ -286,6 +286,21 @@ in {
             startWhenNeeded = true;
             autoMount = true;
         };
+
+        # FTP daemon
+        vsftpd = {
+            enable = true; # enable the daemon
+            localUsers = true; # allow local users to use the daemon
+
+            # allow anonymous users to log in
+            anonymousUser = true;  
+            anonymousUserNoPassword = true;
+            anonymousUploadEnable = false; # Anyone uploading files wouldn't be so secure, would it?
+            anonymousMkdirEnable = false; # Neither would them creating directories.
+            writeEnable = false;
+            
+            
+        };
     };
 
 
@@ -303,6 +318,11 @@ hardware = {
         modesetting.enable = true;
     };
     */
+
+    # bluetooth config
+    bluetooth = {
+        enable = true;
+    };
 };
 
 }
