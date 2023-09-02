@@ -109,7 +109,7 @@ in {
       alacritty
       dosbox
       newsflash
-      blackbox
+      blackbox-terminal
     ];
     shell = pkgs.fish;
   };
