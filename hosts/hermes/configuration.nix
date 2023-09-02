@@ -97,12 +97,19 @@ in {
   users.users.ultra = {
     isNormalUser = true;
     description = "Alex Stan";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ 
+      "networkmanager" 
+      "wheel" 
+      "libvirtd"
+    ];
     packages = with pkgs; [
       wezterm
       gradience
       gnome.gnome-tweaks
       alacritty
+      dosbox
+      newsflash
+      blackbox
     ];
     shell = pkgs.fish;
   };
@@ -120,10 +127,13 @@ in {
     gnomeExtensions.rounded-window-corners
     gnomeExtensions.prime-indicator
     gnomeExtensions.clipboard-indicator
+    gnomeExtensions.gsconnect
+    gnomeExtensions.clipboard-indicator
     nerdfonts
     everblush
     bibata-cursors
     adw-gtk3
+    virt-manager
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -190,4 +200,9 @@ in {
     lxc.enable = true;
     waydroid.enable = true;
   };
+
+  boot.plymouth.enable = true;
+
+  virtualisation.libvirtd.enable = true;
+  programs.dconf.enable = true;
 }
