@@ -143,6 +143,7 @@ in {
         fluffychat
         akregator
         bitwarden
+        schildichat
       ];
     };
 
