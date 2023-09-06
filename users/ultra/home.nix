@@ -143,7 +143,8 @@ in {
         fluffychat
         akregator
         bitwarden
-        schildichat
+        schildichat-desktop
+        xonsh
       ];
     };
 
