@@ -42,6 +42,7 @@ in {
       stateVersion = "22.11";
       packages = with pkgs; [
         firefox
+        tor-browser-bundle-bin
         kate
         distrobox
         fish
@@ -140,6 +141,8 @@ in {
         weechat
         filezilla
         fluffychat
+        akregator
+        bitwarden
       ];
     };
 
