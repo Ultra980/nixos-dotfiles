@@ -145,6 +145,7 @@ in {
         bitwarden
         schildichat-desktop
         xonsh
+        kiwix
       ];
     };
 
