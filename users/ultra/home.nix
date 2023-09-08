@@ -146,6 +146,7 @@ in {
         schildichat-desktop
         xonsh
         kiwix
+        htmlq
       ];
     };
 
