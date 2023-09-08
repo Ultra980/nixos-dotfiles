@@ -226,6 +226,16 @@ in {
           # eamodio.gitlens # Giga git, but with some paid stuff
           kahole.magit # Giga git
         ];
+        userSettings = {
+          nix = {
+            serverPath = "nil";
+            enableLanguageServer = true;
+          };
+          editor = {
+            fontLigatures = true;
+            fontFamily = "JetBrainsMono Nerd Font";
+          };
+        };
       }; 
        
     };
