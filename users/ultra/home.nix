@@ -223,7 +223,8 @@ in {
           enkia.tokyo-night # Tokyo Night theme
           arcticicestudio.nord-visual-studio-code # Nord theme
           jnoortheen.nix-ide # Nix stuff
-          eamodio.gitlens # Giga git
+          # eamodio.gitlens # Giga git, but with some paid stuff
+          kahole.magit # Giga git
         ];
       }; 
        
