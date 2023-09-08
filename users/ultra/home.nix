@@ -236,9 +236,16 @@ in {
           editor = {
             fontLigatures = true;
             fontFamily = "JetBrainsMono Nerd Font";
+            cursorBlinking = "smooth";
+            cursorSmoothCaretAnimation = "on";
+            tabSize = 2;
+            accessibilitySupport = "off";
           };
           workbench = {
             colorTheme = "Tokyo Night";
+          };
+          files = {
+            autoSave = "on";
           };
         };
       }; 
