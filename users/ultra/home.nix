@@ -220,6 +220,7 @@ in {
         extensions = with pkgs.vscode-extensions; [
           enkia.tokyo-night # Tokyo Night theme
           arcticicestudio.nord-visual-studio-code # Nord theme
+          jnoortheen.nix-ide # Nix stuff
         ];
       }; 
        
