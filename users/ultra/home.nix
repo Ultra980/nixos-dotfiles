@@ -147,6 +147,7 @@ in {
         xonsh
         kiwix
         htmlq
+        lite
       ];
     };
 
