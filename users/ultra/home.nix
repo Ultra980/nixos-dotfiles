@@ -148,6 +148,7 @@ in {
         kiwix
         htmlq
         lite
+        comma
       ];
     };
 
@@ -218,7 +219,8 @@ in {
       };
       vscode = {
         enable = true;
-        package = pkgs.vscodium-fhs;
+        package = pkgs.vscodium;
+        mutableExtensionsDir = false;
         extensions = with pkgs.vscode-extensions; [
           enkia.tokyo-night # Tokyo Night theme
           arcticicestudio.nord-visual-studio-code # Nord theme
@@ -234,6 +236,9 @@ in {
           editor = {
             fontLigatures = true;
             fontFamily = "JetBrainsMono Nerd Font";
+          };
+          workbench = {
+            colorTheme = "Tokyo Night";
           };
         };
       }; 
