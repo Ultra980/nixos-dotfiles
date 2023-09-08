@@ -214,7 +214,14 @@ in {
           };
         };
       };
-      
+      vscode = {
+        enable = true;
+        package = pkgs.vscodium;
+        extensions = with pkgs.vscode-extensions; [
+          enkia.tokyo-night # Tokyo Night theme
+          arcticicestudio.nord-visual-studio-code # Nord theme
+        ];
+      }; 
        
     };
     services = {
