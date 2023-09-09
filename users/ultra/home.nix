@@ -150,8 +150,13 @@ in {
         htmlq
         lite
         comma
-        heroic
-        steam-run
+	heroic-launcher
+	steam-run
+        (lutris.override {
+          extraPkgs = pkgs: [
+            pkgs.wine64Packages.stagingFull
+          ];
+        })
       ];
     };
 
@@ -230,6 +235,13 @@ in {
           jnoortheen.nix-ide # Nix stuff
           # eamodio.gitlens # Giga git, but with some paid stuff
           kahole.magit # Giga git
+        ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+          {
+            name = "hungry-delete";
+            publisher = "jasonlhy";
+            version = "1.7.0";
+            sha256 = "sha256-TDs6i0/o0j9XFLQvWze4iloa6yRXce/xIqd2CnA5nug=";
+          }
         ];
         userSettings = {
           nix = {

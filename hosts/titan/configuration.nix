@@ -2,7 +2,7 @@
 # your system.    Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, inputs, ... }:
+inputs: { config, pkgs, lib, ... }:
 let
     nix-software-center = inputs.nix-software-center.packages.${pkgs.system}.nix-software-center;
     # doom-emacs = inputs.nix-doom-emacs.packages.${pkgs.system}.default;
@@ -10,8 +10,9 @@ let
 in {
     imports =
         [ # Include the results of the hardware scan.
-            ./hardware-configuration.nix
+            ./hardware/hardware-configuration.nix
             ./cachix.nix
+            ( import ./hardware/nvidia.nix inputs )
             inputs.nix-but-gigachad.nixosModules.default
         ];
     nh = {
@@ -304,20 +305,10 @@ in {
     };
 
 
- # NVIDIA config
-# services.xserver.videoDrivers = [ "nvidia" ];
+
 hardware = {
-    opengl = {
-        enable = true;
-        driSupport = true;
-        driSupport32Bit = true;
-    };
-    /*
-    nvidia = {
-        package = config.boot.kernelPackages.nvidiaPackages.latest;
-        modesetting.enable = true;
-    };
-    */
+    
+    
 
     # bluetooth config
     bluetooth = {

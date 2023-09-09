@@ -63,9 +63,9 @@
             };
             hermes = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
-                specialArgs = { inherit inputs; };
+                # specialArgs = { inherit inputs; };
                 modules = [
-                    ./hosts/hermes/configuration.nix
+                    ( import ./hosts/hermes/configuration.nix inputs )
                     {
                         environment.etc."nix/inputs/nixpkgs".source = nixpkgs.outPath;
                         nix.nixPath = [
