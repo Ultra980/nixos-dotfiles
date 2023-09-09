@@ -147,7 +147,7 @@ in {
             nerdfonts
             steam-run
             packagekit
-            nix-software-center
+            # nix-software-center
             fish
             libsForQt5.yakuake
             libsForQt5.discover
@@ -162,6 +162,7 @@ in {
             ksnip
             virt-manager
             flutter
+            nixd
         ];
         variables = {
             NIX_AUTO_RUN = "!";

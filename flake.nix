@@ -45,9 +45,9 @@
         nixosConfigurations = {
             titan = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
-                specialArgs = { inherit inputs; };
+                # specialArgs = { inherit inputs; };
                 modules = [
-                    ./hosts/titan/configuration.nix
+                    ( import ./hosts/titan/configuration.nix inputs )
                     {
                         environment.etc."nix/inputs/nixpkgs".source = nixpkgs.outPath;    
                         nix.nixPath = [ 
@@ -63,9 +63,9 @@
             };
             hermes = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
-                # specialArgs = { inherit inputs; };
+                specialArgs = { inherit inputs; };
                 modules = [
-                    ( import ./hosts/hermes/configuration.nix inputs )
+                    ./hosts/hermes/configuration.nix
                     {
                         environment.etc."nix/inputs/nixpkgs".source = nixpkgs.outPath;
                         nix.nixPath = [
