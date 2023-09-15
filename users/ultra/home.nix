@@ -140,6 +140,7 @@ in {
         weechat
         filezilla
         fluffychat
+        bitwarden
       ];
     };
 

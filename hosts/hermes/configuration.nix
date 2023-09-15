@@ -63,6 +63,7 @@ in {
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+  qt.platformTheme = lib.mkForce "gnome";
 
   # Configure keymap in X11
   services.xserver = {
@@ -164,7 +165,13 @@ in {
   system.stateVersion = "23.05"; # Did you read the comment?
 
   #services.xserver.desktopManager.budgie.enable = true;
-
+  
+  services.xserver.desktopManager.phosh = {
+    enable = false;
+    group = "ultra";
+    user = "ultra";
+  };
+  
   # NVIDIA
   hardware.opengl = {
     enable = true;
