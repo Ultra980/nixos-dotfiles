@@ -150,6 +150,7 @@ in {
         htmlq
         lite
         comma
+        heroic
       ];
     };
 
