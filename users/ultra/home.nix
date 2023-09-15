@@ -151,6 +151,7 @@ in {
         lite
         comma
         heroic
+        steam-run
       ];
     };
 

@@ -57,22 +57,20 @@ in {
     LC_TIME = "ro_RO.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  qt.platformTheme = lib.mkForce "gnome";
-
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "ro";
-    xkbVariant = "";
+  services = {
+    xserver = {
+      enable = true;
+      displayManager.gdm.enable = true;
+      desktopManager.gnome.enable = true;
+      layout = "ro";
+      xkbVariant = "";
+      libinput.enable = true;
+    };
+    flatpak.enable = true;
+    printing.enable = true;
+    openssh.enable = true;
   };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+  qt.platformTheme = lib.mkForce "gnome";
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -90,9 +88,6 @@ in {
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ultra = {
@@ -135,6 +130,7 @@ in {
     bibata-cursors
     adw-gtk3
     virt-manager
+    gnome.gnome-software
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -147,14 +143,12 @@ in {
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
