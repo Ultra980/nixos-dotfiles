@@ -1,7 +1,7 @@
 inputs:
 { pkgs, lib, config, ... }: 
 let
-  nix-software-center = inputs.nix-software-center.packages.${pkgs.system}.nix-software-center;
+  # nix-software-center = inputs.nix-software-center.packages.${pkgs.system}.nix-software-center;
   /*
   doom-emacs = inputs.nix-doom-emacs.packages.${pkgs.system}.default.override {
       doomPrivateDir = ./doom.d;
@@ -42,6 +42,7 @@ in {
       stateVersion = "22.11";
       packages = with pkgs; [
         firefox
+        tor-browser-bundle-bin
         kate
         distrobox
         fish
@@ -141,6 +142,14 @@ in {
         filezilla
         fluffychat
         bitwarden
+        akregator
+        bitwarden
+        schildichat-desktop
+        xonsh
+        kiwix
+        htmlq
+        lite
+        comma
       ];
     };
 
@@ -209,7 +218,38 @@ in {
           };
         };
       };
-      
+      vscode = {
+        enable = true;
+        package = pkgs.vscodium;
+        mutableExtensionsDir = false;
+        extensions = with pkgs.vscode-extensions; [
+          enkia.tokyo-night # Tokyo Night theme
+          arcticicestudio.nord-visual-studio-code # Nord theme
+          jnoortheen.nix-ide # Nix stuff
+          # eamodio.gitlens # Giga git, but with some paid stuff
+          kahole.magit # Giga git
+        ];
+        userSettings = {
+          nix = {
+            serverPath = "nil";
+            enableLanguageServer = true;
+          };
+          editor = {
+            fontLigatures = true;
+            fontFamily = "JetBrainsMono Nerd Font";
+            cursorBlinking = "smooth";
+            cursorSmoothCaretAnimation = "on";
+            tabSize = 2;
+            accessibilitySupport = "off";
+          };
+          workbench = {
+            colorTheme = "Tokyo Night";
+          };
+          files = {
+            autoSave = "on";
+          };
+        };
+      }; 
        
     };
     services = {
