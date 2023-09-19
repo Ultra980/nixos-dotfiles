@@ -174,7 +174,7 @@ in {
           language-server = with pkgs; {
             cpp.command = "${clang-tools}/bin/clangd";
             c.command = "${clang-tools}/bin/clangd";
-            nix.command = "${nil}/bin/nil";
+            nix.command = "${nixd}/bin/nixd";
           };
           language = [
             {
@@ -235,6 +235,7 @@ in {
           jnoortheen.nix-ide # Nix stuff
           # eamodio.gitlens # Giga git, but with some paid stuff
           kahole.magit # Giga git
+          bmalehorn.vscode-fish # Fish in vscode
         ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
             name = "hungry-delete";
@@ -245,7 +246,7 @@ in {
         ];
         userSettings = {
           nix = {
-            serverPath = "nil";
+            serverPath = "nixd";
             enableLanguageServer = true;
           };
           editor = {

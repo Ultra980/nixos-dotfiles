@@ -163,6 +163,7 @@ in {
             virt-manager
             flutter
             nixd
+            sddm-kcm
         ];
         variables = {
             NIX_AUTO_RUN = "!";
@@ -266,7 +267,17 @@ in {
 
                 sddm = {
                     enable = true;
+                    settings = {
+                        General = {
+                            DisplayServer = "wayland";
+                            GreeterEnbironment = "QT_WAYLAND_SHELL_INTEGRATION=layer-shell";
+                        };
+                        Wayland = {
+                            CompositerCommand = "kwin_wayland --drm --no-lockscreen --no-global-shortcuts";
+                        };
+                    };
                 };
+                startx.enable = true;
             };
             desktopManager.plasma5.enable = true;
 
@@ -300,9 +311,9 @@ in {
             anonymousUploadEnable = false; # Anyone uploading files wouldn't be so secure, would it?
             anonymousMkdirEnable = false; # Neither would them creating directories.
             writeEnable = false;
-            
-            
         };
+
+        snowflake-proxy.enable = true;
     };
 
 

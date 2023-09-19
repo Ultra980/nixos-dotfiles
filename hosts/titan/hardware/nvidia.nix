@@ -16,4 +16,8 @@ inputs: { config, pkgs, lib, ... }: {
         nvidiaSettings = true;
     };
   };
+  boot = {
+    initrd.kernelModules = [ "nvidia" ];
+    extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+  };
 }
