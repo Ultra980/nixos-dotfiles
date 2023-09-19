@@ -150,8 +150,8 @@ in {
         htmlq
         lite
         comma
-	heroic-launcher
-	steam-run
+	    heroic
+    	steam-run
         (lutris.override {
           extraPkgs = pkgs: [
             pkgs.wine64Packages.stagingFull
