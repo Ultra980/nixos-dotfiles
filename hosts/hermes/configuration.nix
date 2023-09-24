@@ -131,6 +131,7 @@ in {
     adw-gtk3
     virt-manager
     gnome.gnome-software
+    evtest
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
