@@ -132,6 +132,7 @@ in {
     virt-manager
     gnome.gnome-software
     evtest
+    appimagekit
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
