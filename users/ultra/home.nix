@@ -20,6 +20,7 @@ let
 in {
     imports = [ 
       inputs.hyprland.homeManagerModules.default
+      inputs.nix-index-database.hmModules.nix-index
     ];
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
@@ -265,7 +266,11 @@ in {
           };
         };
       }; 
-       
+      nix-index-database = {
+        comma = {
+          enable = true;
+        };
+      };
     };
     services = {
       dunst.enable = false;    
