@@ -150,8 +150,7 @@ in {
         kiwix
         htmlq
         lite
-        comma
-	heroic
+    	heroic
     	steam-run
         (lutris.override {
           extraPkgs = pkgs: [
