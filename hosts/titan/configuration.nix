@@ -197,10 +197,10 @@ in {
     # services.openssh.enable = true;
 
     # Open ports in the firewall.
-    networking.firewall.allowedTCPPorts = [ 21 20 ];
-    networking.firewall.allowedUDPPorts = [ 21 20 ];
+    # networking.firewall.allowedTCPPorts = [ 21 20 22 ];
+    # networking.firewall.allowedUDPPorts = [ 21 20 22 ];
     # Or disable the firewall altogether.
-    # networking.firewall.enable = false;
+    networking.firewall.enable = false;
 
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
@@ -314,6 +314,12 @@ in {
         };
 
         snowflake-proxy.enable = true;
+        openssh = {
+            enable = true;
+            settings = {
+              PasswordAuthentication = true;
+            };
+        };
     };
 
 
