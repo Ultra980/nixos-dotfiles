@@ -58,7 +58,7 @@ in {
         atuin
         clang
         (lib.hiPrio gcc)
-        exa
+        eza
         gnumake
         plasma-browser-integration
         libsForQt5.bismuth
@@ -157,6 +157,7 @@ in {
             pkgs.wine64Packages.stagingFull
           ];
         })
+        waypipe
       ];
     };
 
