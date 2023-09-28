@@ -157,7 +157,7 @@ in {
             plymouth
             clang-tools
             nil
-            pkgconfig
+            pkg-config
             nh
             ksnip
             virt-manager
