@@ -158,6 +158,8 @@ in {
           ];
         })
         waypipe
+        electron-mail
+        hydroxide
       ];
     };
 
