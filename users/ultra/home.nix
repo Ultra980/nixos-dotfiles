@@ -160,6 +160,7 @@ in {
         waypipe
         electron-mail
         hydroxide
+        jujutsu
       ];
     };
 
