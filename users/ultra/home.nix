@@ -161,6 +161,7 @@ in {
         electron-mail
         hydroxide
         jujutsu
+        gparted
       ];
     };
 
