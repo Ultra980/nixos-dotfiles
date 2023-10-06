@@ -70,7 +70,7 @@ in {
         xclip
         steam
         packagekit
-        armcord
+        # armcord # it has a CVE
         rnote
         obsidian
         gnome-obfuscate
@@ -162,6 +162,7 @@ in {
         hydroxide
         jujutsu
         gparted
+        xournalpp
       ];
     };
 
