@@ -163,6 +163,7 @@ in {
         jujutsu
         gparted
         xournalpp
+        (lib.hiPrio netcat-gnu)
       ];
     };
 
