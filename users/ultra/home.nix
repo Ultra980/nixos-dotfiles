@@ -164,6 +164,8 @@ in {
         gparted
         xournalpp
         (lib.hiPrio netcat-gnu)
+        nmap
+        browsh
       ];
     };
 
