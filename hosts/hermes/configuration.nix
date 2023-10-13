@@ -124,7 +124,6 @@ in {
     gnomeExtensions.prime-indicator
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.gsconnect
-    gnomeExtensions.clipboard-indicator
     nerdfonts
     everblush
     bibata-cursors
